@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: localhost
+  username: kemet
+  password: 4321
+  database: egypt
+
+development:
+  <<: *default
+  database: egypt
+
+test:
+  <<: *default
+  database: egypt
+
+production:
+  <<: *default
+  database: egypt
