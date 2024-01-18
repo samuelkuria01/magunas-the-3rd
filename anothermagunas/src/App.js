@@ -1,5 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
+import{Routes, Route} from 'react-router-dom'
+import Home from './Components/Home';
+import Category from './Components/Categroy';
+import Cart from './Components/Cart'
+import Products from './Components/Products';
+import { CartProvider } from 'react-use-cart';
+import NavBar from './Components/NavBar';
 
 function App() {
   return (
