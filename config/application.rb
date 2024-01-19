@@ -7,7 +7,7 @@ require "rails/all"
 Bundler.require(*Rails.groups)
 
 module Magunashypermarket
-  class Application < Rails::Application
+    class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
@@ -20,9 +20,11 @@ module Magunashypermarket
     # config.eager_load_paths << Rails.root.join("extras")
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins 'http://localhost:4002' # Add your React app's origin
+        origins 'http://localhost:4001' # Add your React app's origin
         resource '*', headers: :any, methods: [:get, :post, :put, :patch, :delete, :options, :head]
       end
     end
   end
 end
+
+
