@@ -1,6 +1,6 @@
 {
   "name": "anothermagunas",
-  "proxy": "http://localhost:4001",
+  "proxy": "http://localhost:4002",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -4,19 +4,21 @@ class CategoriesController < ApplicationController
   # GET /categories or /categories.json
   def index
     @categories = Category.all
-    render json: @categories, only: [:name ]
+    # render json: @categories, only: [:name ]
 
   end
 
   # GET /categories/1 or /categories/1.json
   def show
-    render json: @category
+    @categories = Category.all
+    @products = @category.products
+    # render json: @category
   end
 
   # GET /categories/new
   def new
     @category = Category.new
-    render json: @category, only: [:name ]
+    # render json: @category, only: [:name ]
 
   end
 
