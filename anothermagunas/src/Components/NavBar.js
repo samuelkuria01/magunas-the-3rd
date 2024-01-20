@@ -55,30 +55,124 @@ function NavBar() {
                   <li>
                      <Link to='/'>All</Link>
                   </li>
+                  
                   <li>
-                     <Link to='/categories/1'>Food Cupboard</Link>
+                  <div class="dropdown">
+                  <a class=" dropdown-toggle" href="/categories/7"  data-bs-toggle="dropdown" aria-expanded="false">
+                  Food Cupboard
+                     </a>
+
+                        <ul class="dropdown-menu">
+                           <li>
+                              <a class="dropdown-item" href="categories/1">Fresh Food
+                              <p>mambo</p>
+                              <p>mambo</p>
+                              <p>mambo</p>
+                              <p>mambo</p>
+                              </a>
+                           </li>
+                           <li><a class="dropdown-item" href="categories/1">Dairy & eggs 
+                           <p>mambo</p>
+                              <p>mambo</p>
+                              <p>mambo</p>
+                              <p>mambo</p>
+                              </a></li>
+                           <li><a class="dropdown-item" href="categories/1">Sugar & Homebaking flour
+                           <p>mambo</p>
+                              <p>mambo</p>
+                              <p>mambo</p>
+                              <p>mambo</p>
+                           </a></li>
+                           <li><a class="dropdown-item" href="categories/1">Rice & Pasta</a></li>
+                           <li><a class="dropdown-item" href="categories/1">Snaks</a></li>
+                        </ul>
+                     </div>       
                   </li>
                   <li>
-                     <Link to='/categories/9'>Fresh Food</Link>
-                  </li>
+                    <div class="dropdown">
+                        <a data-bs-toggle="dropdown" aria-expanded="false">
+                          Fresh foods
+                        </a>
+
+                        <ul class="dropdown-menu">
+                           <li><a class="dropdown-item" href="categories/1">Dairy & eggs</a></li>
+                           <li><a class="dropdown-item" href="categories/1">Fish & seafood</a></li>
+                           <li><a class="dropdown-item" href="categories/1">Meat & POultry</a></li>
+                           <li><a class="dropdown-item" href="categories/1">Fruits & Vegetables</a></li>
+                        </ul>
+                     </div>      
+                   </li>
                   <li>
-                     <Link to='/categories/4'>Bevarages</Link>
-                  </li>
+                     <div class="dropdown">
+                        <a class=" dropdown-toggle" href="/categories/7"  data-bs-toggle="dropdown" aria-expanded="false">
+                        Beverages
+                        </a>
+
+                           <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="categories/1">Coffee</a></li>
+                              <li><a class="dropdown-item" href="categories/1"> Tea</a></li>
+                              <li><a class="dropdown-item" href="categories/1">Juices</a></li>
+                              <li><a class="dropdown-item" href="categories/1">Kids drinks</a></li>
+                              <li><a class="dropdown-item" href="categories/1">Soft drinks</a></li>
+                              <li><a class="dropdown-item" href="categories/1">Powdered drinks</a></li>
+                           </ul>
+                        </div>      
+                   </li>
                   <li>
-                     <Link to='/categories/5'>Liquor</Link>
-                  </li>
+                     <div class="dropdown">
+                     <a class=" dropdown-toggle" href="/categories/7"  data-bs-toggle="dropdown" aria-expanded="false">
+                        Liquor
+                     </a>
+
+                           <ul class="dropdown-menu">
+                              <li><Link class="dropdown-item" to="categories/7">Gin</Link></li>
+                              <li><Link class="dropdown-item" to="categories/1"> Whisky</Link></li>
+                              <li><Link class="dropdown-item" to="categories/1">Beer</Link></li>
+                              <li><Link class="dropdown-item" to="categories/1">Wine </Link></li>
+                           </ul>
+                        </div> 
+                     </li>
                   <li>
                      <Link to='/categories/7'>Electricals</Link>
                   </li>
                   <li>
-                     <Link to='/categories/6'>Baby Products</Link>
-                  </li>
+                  <div class="dropdown">
+                  <a class=" dropdown-toggle" href="/categories/7"  data-bs-toggle="dropdown" aria-expanded="false">
+                  Cleaning & Household
+                     </a>
+
+                           <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="categories/1">Candles & Airfrsheners</a></li>
+                              <li><a class="dropdown-item" href="categories/1">Cleaning Supplies</a></li>
+                              <li><a class="dropdown-item" href="categories/1">Disposable tableware & Napkin</a></li>
+                              <li><a class="dropdown-item" href="categories/1">Laundry detergents</a></li>
+                              <li><a class="dropdown-item" href="categories/1">Tissue</a></li>
+                              <li><a class="dropdown-item" href="categories/1">Laundry detergents</a></li>
+
+                           </ul>
+                  </div>           
+                   </li>
                   <li>
-                     <Link to='/categories/1'>Cleaning & HouseHold</Link>
-                  </li>
+                  <div class="dropdown">
+                        <a class=" dropdown-toggle" href="/categories/7"  data-bs-toggle="dropdown" aria-expanded="false">
+                        Cleaning & Household
+                        </a>
+
+                           <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="categories/1">Candles & Airfrsheners</a></li>
+                              <li><a class="dropdown-item" href="categories/1">Cleaning Supplies</a></li>
+                              <li><a class="dropdown-item" href="categories/1">Disposable tableware & Napkin</a></li>
+                              <li><a class="dropdown-item" href="categories/1">Laundry detergents</a></li>
+                              <li><a class="dropdown-item" href="categories/1">Tissue</a></li>
+                              <li><a class="dropdown-item" href="categories/1">Laundry detergents</a></li>
+
+                           </ul>
+                  </div>           
+                    </li>
                   <li>
                      <Link to='/categories/8'>Beauty & cosmetcics</Link>
                   </li>
+                  
                </ul>
             </div>
           </div>

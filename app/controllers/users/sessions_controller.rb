@@ -12,17 +12,16 @@ class Users::SessionsController < Devise::SessionsController
   respond_to :json
 
   def create
-    super do |resource|
-      if request.format.json?
-        if resource.errors.empty?
-          render json: { id: resource.id, email: resource.email }
-        else
-          render json: { errors: resource.errors.full_messages }, status: :unprocessable_entity
-        end
-        return
-      end
-    end
+    user = User
+    .find_by(email: params['user']['email'])
+    .try(:authenticate, params['user']['password'])
+    if user 
+      session[:user_id] = user.id
+      render json: {status: :created, user: :user}
+    else 
+      render json: {status: 401}
   end
+end
 
   # DELETE /resource/sign_out
   # def destroy

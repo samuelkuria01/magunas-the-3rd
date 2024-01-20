@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[edit show update destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :authorize_admin, only: [:new, :create, :edit, :update, :destroy]
 
   def index
@@ -13,8 +13,8 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1 or /categories/1.json
   def show
-    @category = Category.find(params[:id])
-   @products = @category.products
+  #   @category = Category.find(params[:id])
+  #  @products = @category.products
   render json: @category
   end
 

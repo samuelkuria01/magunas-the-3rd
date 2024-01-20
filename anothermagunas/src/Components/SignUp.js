@@ -19,14 +19,17 @@ function SignUp() {
          })
 
          if (response.ok) {
-            const user = await response.json()
-            console.log('Sign in successfully:', user)
-         }else {
-            console.error('Sign in failed:', response.statusText)
-         }
-      } catch (e) {
-         console.e('Error during signing in:', e)
-      }
+            const user = await response.json();
+            console.log('Sign in successfully:', user);
+          } else if (response.status === 422) {
+            const errorResponse = await response.json();
+            console.error('Sign in failed:', errorResponse);
+          } else {
+            console.error('Sign in failed:', response.statusText);
+          }
+        } catch (e) {
+          console.error('Error during signing in:', e);
+        }
     }
 
 

@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_category, only: [:index, :show]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :authorize_admin, only: [:new, :create, :edit, :update, :destroy]
 
 
@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     @products = @category.products
-    render json: @products, only: [:id, :title, :image, :price, :category_id]
+     render json: @products, only: [:id, :title, :image, :price, :category_id]
 
   end
 

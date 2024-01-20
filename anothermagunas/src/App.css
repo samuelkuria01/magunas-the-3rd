@@ -57,12 +57,41 @@ gap: 1rem;
 .signupuu i{
 font-size: 28px;
 }
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #dcfbf2e6;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.507);
+  z-index: 1;
+  min-width: 200px;
+
+}
+
+.dropdown-menu ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns */
+  gap: 10px; /* Adjust the gap between items as needed */
+}
+
+.dropdown-menu li {
+  list-style: none;
+  padding: 6px;
+}
+
+.dropdown-menu li a {
+  display: block;
+  text-decoration: none;
+}
 .homebox2 button {
   border: none;
   cursor: pointer;
   padding: 6px;
   border-radius: 10px;
-  background-color: rgba(168, 239, 221, 0.356);
+  background-color: rgba(168, 239, 221, 0.153);
 }
 .homebox2 button a{
   text-decoration: none;
@@ -662,7 +691,7 @@ font-size: 20px;
   font-size: 13px;
   }
   .card-img-top{
-    width: 80%;
+    width: 95%;
     height: 200px;
   }
   .card-custom-width{
