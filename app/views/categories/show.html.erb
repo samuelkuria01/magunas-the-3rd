@@ -1,6 +1,5 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @category %>
 <%= link_to 'All Products', category_products_path(@category) %>
 
 <div>
@@ -10,3 +9,6 @@
   <%= button_to "Destroy this category", @category, method: :delete %>
 </div>
 
+<div>
+  <strong>Category:</strong> <%= @category.name %>
+</div>

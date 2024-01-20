@@ -1,24 +1,28 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[edit show update destroy]
+  before_action :authenticate_user!
+  before_action :authorize_admin, only: [:new, :create, :edit, :update, :destroy]
 
-  # GET /categories or /categories.json
   def index
     @categories = Category.all
-    # render json: @categories, only: [:name ]
+    @user_email = current_user.email if user_signed_in?
 
+    render json: @categories, only: [:name ]
   end
+  
 
   # GET /categories/1 or /categories/1.json
   def show
-    @categories = Category.all
-    @products = @category.products
-    # render json: @category
+    @category = Category.find(params[:id])
+   @products = @category.products
+  render json: @category
   end
 
   # GET /categories/new
   def new
+
     @category = Category.new
-    # render json: @category, only: [:name ]
+    render json: @category, only: [:name ]
 
   end
 
@@ -70,6 +74,11 @@ class CategoriesController < ApplicationController
       @category = Category.find(params[:id])
     end
 
+    def authorize_admin
+      redirect_to root_path, alert: 'You do not have permission.' unless current_user.admin?
+    end
+
+    
     # Only allow a list of trusted parameters through.
     def category_params
       params.require(:category).permit(:name)

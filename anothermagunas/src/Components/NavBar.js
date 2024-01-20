@@ -6,6 +6,7 @@ import { useCart } from 'react-use-cart';
 function NavBar() {
    
     const { totalItems} = useCart()
+    
 
   return (
     <div className='Homecontainer'>
@@ -28,11 +29,14 @@ function NavBar() {
 
             <div className='signcart'>
                <div className='signupuu'>
-               <button className='signcartbtn'>Sign Up</button>
+               <i class="fa-regular fa-circle-user fa-shake"></i>
+               {/* <i class="fa-regular fa-circle-user"></i> */}
                </div>
 
                <div className='loginmee'>
-               <button className='signcartbtn'>Log In</button>
+               <button className='signcartbtn'>
+                 <Link to='/users/sign_up'>Register & Log In</Link> 
+                  </button>
                </div>
 
                <div className='carticon'>

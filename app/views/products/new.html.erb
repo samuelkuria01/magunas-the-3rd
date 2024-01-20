@@ -1,9 +1,14 @@
 <h1>New product</h1>
 
+<% if current_user.admin? %>
+<p>User Role: <%= current_user.role %></p>
 <%= render "form", product: @product %>
-
 <br>
 
 <div>
   <%= link_to "Back to products", products_path %>
 </div>
+<% else %>
+<p> No permission to add new products</p>
+<% end %>
+

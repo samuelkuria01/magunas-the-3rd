@@ -1,13 +1,15 @@
 class ProductsController < ApplicationController
   before_action :set_category, only: [:index, :show]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  
+  before_action :authenticate_user!
+  before_action :authorize_admin, only: [:new, :create, :edit, :update, :destroy]
+
 
   # GET /products or /products.json
   def index
     @products = Product.all
     @products = @category.products
-    #  render json: @products, only: [:id, :title, :image, :price, :category_id]
+    render json: @products, only: [:id, :title, :image, :price, :category_id]
 
   end
 
@@ -27,20 +29,20 @@ class ProductsController < ApplicationController
       return
     end
   
-    # render json: {
-    #   id: @product.id,
-    #   title: @product.title,
-    #   image: @product.image,
-    #   price: @product.price,
-    #   category_id: @product.category_id,
-    #   category: @category.as_json(only: [:id, :name]) # Include category information if needed
-    # }
+    render json: {
+      id: @product.id,
+      title: @product.title,
+      image: @product.image,
+      price: @product.price,
+      category_id: @product.category_id,
+      category: @category.as_json(only: [:id, :name]) # Include category information if needed
+    }
   end
   
   # GET /products/new
   def new
     @product=  Product.new
-    # render json: @products, only: [:id, :title, :image, :price, :category_id]
+    render json: @products, only: [:id, :title, :image, :price, :category_id]
 
   end
 
@@ -95,6 +97,13 @@ class ProductsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_product
       @product = Product.find(params[:id])
+    end
+
+    def authorize_admin
+      unless current_user.admin?
+        flash[:alert] = 'You do not have permission to access this page.'
+        redirect_back fallback_location: root_path
+      end
     end
 
     # Only allow a list of trusted parameters through.
