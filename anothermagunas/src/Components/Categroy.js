@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams,useNavigate } from 'react-router-dom';
 import { useCart } from 'react-use-cart'
 
 function Category() {
+  const navigate = useNavigate();
   const { addItem} = useCart()
   const [addedItems, setAddedItems] = useState([])
   const { id } = useParams();
@@ -71,14 +72,14 @@ const {
   removeItem,
 } = useCart();
 
-if (isEmpty) return <p>
-  <h3 className='emptycart'>
-  Your Cart is empty
-  </h3>
-  <Link>
-  <button className='cartbtn4'>go back</button>
-  </Link>
-  </p>
+// if (isEmpty) return <p>
+//   <h3 className='emptycart'>
+//   Your Cart is empty
+//   </h3>
+//   <Link >
+//   <button className='cartbtn4'>go back</button>
+//   </Link>
+//   </p>
 
   //Calculate the total quantit of goods in the cart
   const totalPrice = items.reduce((total, item) =>total + item.price * item.quantity,0)
@@ -136,6 +137,15 @@ if (isEmpty) return <p>
 
           </div>
 
+          <div class="card">
+    <span class="card__title">Subscribe</span>
+    <p class="card__content">Get fresh web design resources delivered straight to your inbox every week.
+    </p>
+    <div class="card__form">
+        <input placeholder="Your Email" type="text"/>
+        <button class="sign-up"> Sign up</button>
+    </div>
+</div>
            
             </div>
 

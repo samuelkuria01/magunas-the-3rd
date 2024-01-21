@@ -65,23 +65,14 @@ function NavBar() {
                         <ul class="dropdown-menu">
                            <li>
                               <a class="dropdown-item" href="categories/1">Fresh Food
-                              <p>mambo</p>
-                              <p>mambo</p>
-                              <p>mambo</p>
-                              <p>mambo</p>
+                              
                               </a>
                            </li>
                            <li><a class="dropdown-item" href="categories/1">Dairy & eggs 
-                           <p>mambo</p>
-                              <p>mambo</p>
-                              <p>mambo</p>
-                              <p>mambo</p>
+                          
                               </a></li>
                            <li><a class="dropdown-item" href="categories/1">Sugar & Homebaking flour
-                           <p>mambo</p>
-                              <p>mambo</p>
-                              <p>mambo</p>
-                              <p>mambo</p>
+                            
                            </a></li>
                            <li><a class="dropdown-item" href="categories/1">Rice & Pasta</a></li>
                            <li><a class="dropdown-item" href="categories/1">Snaks</a></li>
