@@ -57,46 +57,61 @@ function Cart() {
 
   return (
     <div>
-          <div>
-      <h1>Cart ({totalUniqueItems})</h1>
-      <table className='carttable'>
-  <thead>
-    <tr>
-      <th>Item</th>
-      <th>Quantity</th>
-      <th>Price</th>
-    </tr>
-  </thead>
-  <tbody>
-    {items.map((item) => (
-      <tr key={item.id}>
-        <td>{item.name}</td>
-        <td>
-          <button id='cartbtn3' onClick={() => updateItemQuantity(item.id, item.quantity - 1)}>
+    <div className='mamboyacart'>
+      <div className='yoshipment'>
+      <h5>Shopping cart </h5>
+      <div>
+      ({totalUniqueItems}) items
+      </div>
+      </div>
+    {items.map((item) =>(
+       <div className='cartwrappermambo' key={item.id}>
+        <div className='cartnip'>
+        <div>
+         <img className='cartenimage' src={item.image} alt='mambosafi'></img>
+       </div>
+       <div>
+        {item.title}
+        <div>
+          <h5>Price</h5>
+         <p>Ksh. {item.price}</p>
+         </div>
+        </div>
+       <div className='quantoo'>
+         <p>Quantity</p> 
+         <button id='cartbtn3' onClick={() => updateItemQuantity(item.id, item.quantity - 1)}>
             <i id='addbtn' className="fa-solid fa-minus"></i>
           </button>
           {item.quantity}
           <button id='cartbtn3' onClick={() => updateItemQuantity(item.id, item.quantity + 1)}>
             <i id='addbtn' className="fa-solid fa-plus"></i>
           </button>
-        </td>
-        <td>{(item.quantity * item.price).toFixed(2)}</td>
-        <td>
-          <button  id="dustbin" onClick={() => removeItem(item.id)}>
-            <i  className="fa-sharp fa-solid fa-trash"></i>
-          </button>
-        </td>
-      </tr>
+       </div>
+          </div>
+       
+       
+       <div className='cartkubonga'>
+        
+         <div>
+         <h5>Total</h5>
+         <p> Ksh. {(item.quantity * item.price).toFixed(2)}</p>
+         </div>
+      <div>
+       <button  id="dustbin" onClick={() => removeItem(item.id)}>
+                  <i  className="fa-sharp fa-solid fa-trash"></i>
+        </button>
+      </div>
+         
+       </div>
+      
+
+     </div>
+
     ))}
-  </tbody>
-</table>
-
-
-<span class="titlle">Total Price:<span className='price2'>Ksh{totalPrice.toFixed(2)}</span> </span>
+     <span class="titlle">Total Price:<span className='price2'>Ksh{totalPrice.toFixed(2)}</span> </span>
 {/* <button onClick={handlePlaceOrder} type="button" class="action">Place Order</button> */}
 
     </div>
-
     </div>
   )
 }

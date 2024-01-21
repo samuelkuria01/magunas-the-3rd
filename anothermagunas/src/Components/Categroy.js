@@ -65,6 +65,25 @@ useEffect(() => {
   fetchData();
 }, [id]);
 
+const {
+  isEmpty,
+  items,
+  removeItem,
+} = useCart();
+
+if (isEmpty) return <p>
+  <h3 className='emptycart'>
+  Your Cart is empty
+  </h3>
+  <Link>
+  <button className='cartbtn4'>go back</button>
+  </Link>
+  </p>
+
+  //Calculate the total quantit of goods in the cart
+  const totalPrice = items.reduce((total, item) =>total + item.price * item.quantity,0)
+
+
 
   return (
     <div className='categorycontainer'>
@@ -78,7 +97,7 @@ useEffect(() => {
         <div className='mamboyoteyacategory'>
 
             <div className='categoryheader'>
-              <h2>{categoryName}</h2>
+              <h2><Link to='/'>Home</Link> / {categoryName}</h2>
               <div className='searchcont'>
                   <input 
                   type="text"
@@ -93,23 +112,31 @@ useEffect(() => {
           <div className='servercontainerbiggy'>
 
             <div className='bigmancont'>
-            <form class="form">
-              <span class="title">Subscribe to our newsletter.</span>
-              <p class="description">Nostrud amet eu ullamco nisi aute in ad minim nostrud adipisicing velit quis. Duis tempor incididunt dolore.</p>
-              <div>
-                <input placeholder="Enter your email" type="email" name="email" id="email-address"/>
-                <button type="submit">Subscribe</button>
-              </div>
-            </form>
+          <div>
+            <h5>Shopping Cart</h5>
+            {items.map((item) =>(
+                <div className='bagdad'>
+                <div>
+                  <img className='shopdecartimg' src={item.image} alt=''></img>
+                </div>
+                <div className='bagdadstory'>
+                 <h4> {item.title}</h4>
+                  <div className='aimy'>
+                  <p>Ksh. {item.price}</p>
+                  <div >
+                  <button  id="dustbin" onClick={() => removeItem(item.id)}>
+                  <i  className="fa-sharp fa-solid fa-trash"></i>
+                  </button>
+                  </div>
+                  </div>
+                  </div>
+                </div>
+            ))}
+                <span class="titlle">Subtotal: <span className='price2'>Ksh  {totalPrice.toFixed(2)}</span> </span>
 
-            <form class="form">
-              <span class="title">Subscribe to our newsletter.</span>
-              <p class="description">Nostrud amet eu ullamco nisi aute in ad minim nostrud adipisicing velit quis. Duis tempor incididunt dolore.</p>
-              <div>
-                <input placeholder="Enter your email" type="email" name="email" id="email-address"/>
-                <button type="submit">Subscribe</button>
-              </div>
-            </form>
+          </div>
+
+           
             </div>
 
 

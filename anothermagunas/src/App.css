@@ -665,12 +665,49 @@ height: 350px;
   margin-left: 20%;
   margin-top: 3%;
   border-radius: 20px;
-  padding: 30px;
-  width: 40%;
+  padding: 50px;
+  width: 60%;
 }
 .cartenimage{
   height: 200px;
   margin-bottom: 35%;
+}
+.shopdecartimg{
+  height: 100px;
+}
+.bigmancont{
+  width: 60%;
+  height: 1050px;
+  border-radius: 10px;
+  background: #e0e0e03e;
+  box-shadow: 20px 20px 30px #bebebe8c,
+                -20px -20px 40px #ffffff84;
+ 
+}
+.aimy{
+  display: flex;
+  justify-content: space-between;
+}
+.bagdad{
+  padding: 10px;
+  margin-top: 5%;
+  display: flex;
+  gap: 2rem;
+    
+}
+.bagdadstory h5,p{
+font-size: 12px;
+}
+.bagdadstory h4{
+  font-size: 15px;
+  }
+.cartkubonga{
+  display: flex;
+  gap: 3rem;
+}
+.cartnip{
+  display: flex;
+  gap: 3rem;
 }
 .yacart{
   color: black;
@@ -700,6 +737,12 @@ font-size: 20px;
   .mamboyoteyacategory{
     width: 80%;
 margin-left: 10%;  
+}
+.categoryheader h2{
+   font-size: 16px;
+}
+.categoryheader h2 a{
+text-decoration: none;
 }
 
 

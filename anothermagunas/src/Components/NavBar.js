@@ -90,9 +90,9 @@ function NavBar() {
                   </li>
                   <li>
                     <div class="dropdown">
-                        <a data-bs-toggle="dropdown" aria-expanded="false">
-                          Fresh foods
-                        </a>
+                    <a class=" dropdown-toggle" href="/categories/7"  data-bs-toggle="dropdown" aria-expanded="false">
+                  Fresh foods
+                     </a>
 
                         <ul class="dropdown-menu">
                            <li><a class="dropdown-item" href="categories/1">Dairy & eggs</a></li>
