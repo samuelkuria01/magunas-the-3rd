@@ -11,7 +11,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    respond_with resource, location: after_sign_up_path_for(resource)
+    build_resource(sign_up_params)
 
     if resource.save
       yield resource if block_given?
@@ -27,6 +27,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     else
       clean_up_passwords resource
       set_minimum_password_length
+      respond_with resource
     end
   end
 
@@ -75,9 +76,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
-  # protected
+  protected
 
-  # def after_sign_up_path_for(resource)
-  #   categories_path
-  # end
+  def after_sign_up_path_for(resource)
+    categories_path
+  end
 end

@@ -44,6 +44,13 @@ gap: 1rem;
   justify-content: center;
   /* margin-top: -3%; */
 }
+.locatebtn{
+  border: none;
+  cursor: pointer;
+  padding: 5px 20px 0px 10px;
+  /* padding-top: 15px; */
+  border-radius: 10px;
+}
 .signcartbtn{
   border: none;
   cursor: pointer;
@@ -280,6 +287,14 @@ color: green;
   justify-content: space-around;
   align-items: center;
 }
+.locateicon i{
+  font-size: 20px;
+}
+.locatedata p{
+  font-size: 15px;
+}
+.locatedata span{
+color: brown;}
 .maguuguu{
   width: 60%;
   height: auto;
@@ -692,8 +707,12 @@ height: 350px;
   padding: 10px;
   margin-top: 5%;
   display: flex;
-  gap: 2rem;
-    
+  gap: 2rem;  
+}
+.locateme{
+  display: flex;
+  align-items: center;
+gap: 0.5rem;
 }
 .bagdadstory h5,p{
 font-size: 12px;
