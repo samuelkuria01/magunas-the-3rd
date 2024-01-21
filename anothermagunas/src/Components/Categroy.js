@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams,useNavigate } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useCart } from 'react-use-cart'
 
 function Category() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { addItem} = useCart()
   const [addedItems, setAddedItems] = useState([])
   const { id } = useParams();

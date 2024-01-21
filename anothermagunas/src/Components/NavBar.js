@@ -97,10 +97,10 @@ function NavBar() {
                      </a>
 
                         <ul class="dropdown-menu">
-                           <li><a class="dropdown-item" href="/categories/1">Dairy & eggs</a></li>
-                           <li><a class="dropdown-item" href="/categories/1">Fish & seafood</a></li>
-                           <li><a class="dropdown-item" href="/categories/1">Meat & POultry</a></li>
-                           <li><a class="dropdown-item" href="/categories/1">Fruits & Vegetables</a></li>
+                           <li><a class="dropdown-item" href="/categories/6">Dairy & eggs</a></li>
+                           <li><a class="dropdown-item" href="/categories/12">Fish & seafood</a></li>
+                           <li><a class="dropdown-item" href="/categories/13">Meat & Poultry</a></li>
+                           <li><a class="dropdown-item" href="/categories/4">Fruits & Vegetables</a></li>
                         </ul>
                      </div>      
                    </li>

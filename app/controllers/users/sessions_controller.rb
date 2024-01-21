@@ -9,19 +9,19 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   # POST /resource/sign_in
-  respond_to :json
+#   respond_to :json
 
-  def create
-    user = User
-    .find_by(email: params['user']['email'])
-    .try(:authenticate, params['user']['password'])
-    if user 
-      session[:user_id] = user.id
-      render json: {status: :created, user: user}
-    else 
-      render json: {status: 401}
-  end
-end
+#   def create
+#     user = User
+#     .find_by(email: params['user']['email'])
+#     .try(:authenticate, params['user']['password'])
+#     if user 
+#       session[:user_id] = user.id
+#       render json: {status: :created, user: user}
+#     else 
+#       render json: {status: 401}
+#   end
+# end
 
 
   # DELETE /resource/sign_out
@@ -29,11 +29,11 @@ end
   #   super
   # end
 
-  protected
+  # protected
 
-  def after_sign_in_path_for(resource)
-    categories_path
-  end
+  # def after_sign_in_path_for(resource)
+  #   categories_path
+  # end
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])

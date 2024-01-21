@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     @products = @category.products
-     render json: @products, only: [:id, :title, :image, :price, :category_id]
+    render json: @products, only: [:id, :title, :image, :price, :category_id]
 
   end
 
